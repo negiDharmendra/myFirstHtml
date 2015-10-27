@@ -1,0 +1,37 @@
+#header
+{
+	display: block;
+	background-color: #4682B4;
+	border-radius: 4px;
+	height: 130px;
+	font-size: 30;
+	text-indent: 20;
+	color: white;
+	font-weight: bolder;
+}
+a
+{
+	color: black;
+	text-decoration: none;
+}
+a:hover
+{
+	color:white;
+}
+#otherpages
+{
+	padding-top: 3px;
+    border: hidden;
+    width: 350px;
+    height: 25px;
+}
+.horizontal_nav {
+	height: 20px;
+	border-radius: 4px;
+  	background: steelblue;
+}
+.horizontal_nav:hover {
+	height: 20px;
+	border-radius: 4px;
+  	background: lightgray;
+}

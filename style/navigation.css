@@ -1,0 +1,16 @@
+#nav
+{
+	float:left;
+	background-color: #4682B4; 
+	width:200px; height: 600px;
+	border-radius: 8px;
+	margin-top:20px;
+	padding-top:10px;
+}
+
+#otherLinks
+{
+	border: hidden;
+    padding: 10px;
+    border-spacing: 10px;
+}

@@ -3,38 +3,48 @@
 <link rel="stylesheet" type="text/css" href="style/common.css">
 <link rel="stylesheet" type="text/css" href="style/navigation.css">
 <head>
-	<title>Hello</title>
+<title>Hello</title>
 </head>
 <body style="background-color: #F8F8FF;">
-	<div id="header" >
-		<img src="./images/infoHubLogo.png">
-		<ul id="otherpages" >
-			<li class="horizontal_nav"><a href="index.html" >Home</a></li>
-			<li class="horizontal_nav"><a href="step2015_details.html">STEP 2015-2017</a></li>
-			<li class="horizontal_nav"><a href="myQuiz.html" >Quiz</a></li>
-			<li class="horizontal_nav"><a href="contact_us.html" >Contact Us</a></li>
-		</ul>
-	</div>
-	<div id="nav">
-		<table  id="otherLinks">
-			<tr><td><a href="https://developer.mozilla.org/en-US/" > MDN</a></td></tr>
-			<tr><td><a href="https://nodejs.org/" > NODE.JS</a></td></tr>
-			<tr><td><a href="http://www.w3schools.com/" > W3SCHOOL</a></td></tr>
-			<tr><td><a href="https://stackoverflow.com/" > STACK OVERFLOW</a></td></tr>
-			<tr><td><a href="https://www.npmjs.com/" > NPM</a></td></tr>
-			<tr><td><a href="https://jquery.com/" > jQUERY</a></td></tr>
-			<tr><td><a href="https://color.adobe.com/" > COLOR ADOBE</a></td></tr>
-			<tr><td><a href="https://tw-steplibrary.rhcloud.com" > STEP Library</a></td></tr>
-			<tr><td><a href="https://trello.com/" > Trello</a></td></tr>
-			<tr><td><a href="https://thoughtworks.okta.com/login/do-login" > ThoughtWorks OKTA</a></td></tr>
-			<tr><td><a href="https://github.com/" > GIT HUB</a></td></tr>
-			<tr><td><a href="https://www.irctc.co.in/eticketing/loginHome.jsf" > IRCTC </a></td></tr>
-			<tr><td><a href="https://www.kotak.com" > KOTAK Net Banking</a></td></tr>
-		</table>
-	</div>
-	<div id="step2015-2017">
-		<p style="padding-left:380px;font-family:Arial;font-size: 30;font-weight: bolder;">STEP 2015-17:</p>
-		<iframe src="./step2015_iframe.html" frameborder="0" width="600" height="550"></iframe>
-	</div>
+<div id="header" >
+	<img src="./images/infoHubLogo.png">
+	<ul id="otherpages" >
+		<li class="horizontal_nav"><a href="index.html" >Home</a></li>
+		<li class="horizontal_nav"><a href="step2015_details.html">STEP 2015-2017</a></li>
+		<li class="horizontal_nav"><a href="myQuiz.html" >Quiz</a></li>
+		<li class="horizontal_nav"><a href="contact_us.html" >Contact Us</a></li>
+	</ul>
+</div>
+<div id="nav">
+	<table  id="otherLinks">
+		<tr><td><a href="https://developer.mozilla.org/en-US/" > MDN</a></td></tr>
+		<tr><td><a href="https://nodejs.org/" > NODE.JS</a></td></tr>
+		<tr><td><a href="http://www.w3schools.com/" > W3SCHOOL</a></td></tr>
+		<tr><td><a href="https://stackoverflow.com/" > STACK OVERFLOW</a></td></tr>
+		<tr><td><a href="https://www.npmjs.com/" > NPM</a></td></tr>
+		<tr><td><a href="https://jquery.com/" > jQUERY</a></td></tr>
+		<tr><td><a href="https://color.adobe.com/" > COLOR ADOBE</a></td></tr>
+		<tr><td><a href="https://tw-steplibrary.rhcloud.com" > STEP Library</a></td></tr>
+		<tr><td><a href="https://trello.com/" > Trello</a></td></tr>
+		<tr><td><a href="https://thoughtworks.okta.com/login/do-login" > ThoughtWorks OKTA</a></td></tr>
+		<tr><td><a href="https://github.com/" > GIT HUB</a></td></tr>
+		<tr><td><a href="https://www.irctc.co.in/eticketing/loginHome.jsf" > IRCTC </a></td></tr>
+		<tr><td><a href="https://www.kotak.com" > KOTAK Net Banking</a></td></tr>
+	</table>
+</div>
+<div id="step2015-2017">
+	<iframe src="./step2015_iframe.html" width="100%" height="400px" frameborder="0"></iframe>
+</div>
+<div id="information_form">
+	<form id="candidate_details" method="POST">
+		Name:</br><input class="input" name='name' type="input" required></br>
+		D.O.B:</br><input class="input" name='D.O.B' type="input" required></br>
+		Employee id:</br><input class="input" name='employee_id' type="input" required></br>
+		E-mail:</br><input class="input" name='e_mail' type="input" required></br>
+		Git-HUB Id:</br><input class="input" name='Git_HUB' type="input" required></br>
+		Contact Number:</br><input class="input" name='contact_number' type="input" required></br>
+		<input id="submit" type="submit" value="Submit">
+	</form>
+</div>
 </body>
 </html>

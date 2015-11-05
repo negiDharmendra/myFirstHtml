@@ -45,3 +45,28 @@
 	border-radius: 4px;
   	display: inline-block;
 }
+#step2015-2017{
+	width: 63%;
+	height: 500px;
+	margin: 1.2% 0 0 1%;
+	float: left;
+}
+
+#information_form{
+	width: 20%;
+	height: 400px;
+	margin: 1.2% 0 0 1%;
+	border-radius: 8px;
+	background-color: #4682B4;
+	float: right;
+}
+form{
+	font-size: 20px;
+	margin: 0 0 0 4%;
+}
+.input{
+	height: 15px;
+	width: 200px;
+	margin: 0 0 1% 15%;
+}
+

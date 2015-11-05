@@ -24,7 +24,6 @@ var match_URL_patterns = function(url){
 emitter.on('next',function(handler,req,res,next){
 	if(handler.length==0) return
 	var pathHandlers = handler.shift();
-	console.log("pathHandlers===>",pathHandlers)
 	pathHandlers.handler(req,res,next)
 })
 
@@ -119,7 +118,7 @@ function methodNotAllowed(req,res,next){
 	console.log(res.statusCode+"\n-------------------------------------------------------");
 	res.end("This"+ req.method+" method is not allowed for this link.")
 }
-
-http.createServer(requestHandler).listen(3000, function(){
-	console.log("Server is started at port \"3000\"")
+var port = +process.argv[2]
+http.createServer(requestHandler).listen(port, function(){
+	console.log("Server is started at port \""+port+"\"")
 });

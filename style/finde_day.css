@@ -1,0 +1,13 @@
+#input_date{
+	width: 50%;
+	height: 500px;
+	background-color: lightgray;
+	margin: 1.6% 0 0 20%;
+	border-radius: 8px;
+}
+#result{
+	width: 20%;
+	height: 50px;
+	margin: 2% 0 0 4%;
+	font-size: 30px;
+}

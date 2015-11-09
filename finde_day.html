@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="style/index.css">
+<link rel="stylesheet" type="text/css" href="style/common.css">
+<link rel="stylesheet" type="text/css" href="style/navigation.css">
+<link rel="stylesheet" type="text/css" href="style/finde_day.css">
+<head>
+	<title>Hello</title>
+</head>
+<script type="text/javascript" src="java/finde_day.js"></script>
+<body style="background-color: #F8F8FF;">
+	<div id="header" >
+		<img src="./images/infoHubLogo.png">
+		<ul id="otherpages" >
+			<li class="horizontal_nav"><a href="index.html" >Home</a></li>
+			<li class="horizontal_nav"><a href="step2015_details.html">STEP 2015-2017</a></li>
+			<li class="horizontal_nav"><a href="myQuiz.html" >Quiz</a></li>
+			<li class="horizontal_nav"><a href="contact_us.html" >Contact Us</a></li>
+		</ul>
+	</div>
+	<div id="nav">
+		<table  id="otherLinks">
+			<tr><td><a href="https://developer.mozilla.org/en-US/" > MDN</a></td></tr>
+			<tr><td><a href="https://nodejs.org/" > NODE.JS</a></td></tr>
+			<tr><td><a href="http://www.w3schools.com/" > W3SCHOOL</a></td></tr>
+			<tr><td><a href="https://stackoverflow.com/" > STACK OVERFLOW</a></td></tr>
+			<tr><td><a href="https://www.npmjs.com/" > NPM</a></td></tr>
+			<tr><td><a href="https://jquery.com/" > jQUERY</a></td></tr>
+			<tr><td><a href="https://color.adobe.com/" > COLOR ADOBE</a></td></tr>
+			<tr><td><a href="https://tw-steplibrary.rhcloud.com" > STEP Library</a></td></tr>
+			<tr><td><a href="https://trello.com/" > Trello</a></td></tr>
+			<tr><td><a href="https://thoughtworks.okta.com/login/do-login" > ThoughtWorks OKTA</a></td></tr>
+			<tr><td><a href="https://github.com/" > GIT HUB</a></td></tr>
+			<tr><td><a href="https://www.irctc.co.in/eticketing/loginHome.jsf" > IRCTC </a></td></tr>
+			<tr><td><a href="https://www.kotak.com" > KOTAK Net Banking</a></td></tr>
+		</table>
+	</div>
+	<div id="input_date">
+	<!-- <form action="./finde_day.html"> -->
+		Date:<input id="date" type="input" name="date" required>
+		Month:<input id="month" type="input" name="month" required>
+		Year:<input id="year" type="input" name="year" required></br></br>
+	<!-- </form> -->
+		<button id="accumulate" onclick="main()">Accumulate</button>
+		<div id="result"></div>
+	</div>
+</body>
+</html>

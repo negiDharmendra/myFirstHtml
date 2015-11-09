@@ -79,9 +79,9 @@ function serveAllFile(req,res,next){
 	})
 };
 //==================================POST=======================================================
-function maintainDataBase(data){
-	var dataBase = fs.existsSync('./myData/studentDetails.json')&&JSON.parse(fs.readFileSync('./myData/studentDetails.json','utf-8'))||[];
-	dataBase.unshift(data);
+function maintainDataBase(comment){
+	var dataBase = fs.existsSync('./myData/studentDetails.json')&&JSON.parse(fs.readFileSync('./myData/studentDetails.json','utf-8'))||{};
+	dataBase[comment.name] = comment;
 	var jsonData = JSON.stringify(dataBase)
 	fs.writeFileSync('./myData/studentDetails.json',jsonData);
 };
@@ -101,6 +101,9 @@ function postGivenDataIntoRelevantFile(req,res,next){
 	req.on('end',function(){
 		maintainDataBase(data)
 		var commentData = JSON.parse(fs.readFileSync('./myData/studentDetails.json','utf-8'));
+		var keys = Object.keys(commentData).sort();
+		commentData = keys.map(function(key){return commentData[key]})
+		console.log(commentData,"=============++++++++++++++++++++")
 		var dataToBeAdded = commentData.map(parepareHtml)
 		var fileData = fs.readFileSync("./step2015_iframe.html",'utf-8').split(/\n\r|\n\t|\n/);
 		var fileDataInArray = fileData.slice(0,23)

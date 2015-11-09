@@ -78,10 +78,11 @@ function serveAllFile(req,res,next){
 		else next();
 	})
 };
-//==================================POST=======================================================
+//==================================POST and DELETE=======================================================
 function maintainDataBase(comment){
 	var dataBase = fs.existsSync('./myData/studentDetails.json')&&JSON.parse(fs.readFileSync('./myData/studentDetails.json','utf-8'))||{};
-	dataBase[comment.name] = comment;
+	if('delete' in comment){var delt  = comment['delete'];delete dataBase[delt];}
+	else dataBase[comment.name] = comment;
 	var jsonData = JSON.stringify(dataBase)
 	fs.writeFileSync('./myData/studentDetails.json',jsonData);
 };
@@ -96,14 +97,12 @@ function postGivenDataIntoRelevantFile(req,res,next){
 	req.on('data',function(chunk){
 		data+=chunk;
 		data = querystring.parse(data);
-	console.log(data)
 	})
 	req.on('end',function(){
 		maintainDataBase(data)
 		var commentData = JSON.parse(fs.readFileSync('./myData/studentDetails.json','utf-8'));
 		var keys = Object.keys(commentData).sort();
 		commentData = keys.map(function(key){return commentData[key]})
-		console.log(commentData,"=============++++++++++++++++++++")
 		var dataToBeAdded = commentData.map(parepareHtml)
 		var fileData = fs.readFileSync("./step2015_iframe.html",'utf-8').split(/\n\r|\n\t|\n/);
 		var fileDataInArray = fileData.slice(0,23)

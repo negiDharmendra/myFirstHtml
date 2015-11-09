@@ -36,6 +36,7 @@
 	<iframe src="./step2015_iframe.html" width="100%" height="400px" frameborder="0"></iframe>
 </div>
 <div id="information_form">
+	<p style="font-size:20px;margin:4px;">Add STEP-Intern Details:</p>
 	<form id="candidate_details" method="POST">
 		Name:</br><input class="input" name='name' type="input" required></br>
 		D.O.B:</br><input class="input" name='D.O.B' type="input" required></br>
@@ -44,6 +45,12 @@
 		Git-HUB Id:</br><input class="input" name='Git_HUB' type="input" required></br>
 		Contact Number:</br><input class="input" name='contact_number' type="input" required></br>
 		<input id="submit" type="submit" value="Submit">
+	</form>
+	<hr>
+	<p style="font-size:20px;margin:4px;">Remove STEP-Intern Details:</p>
+	<form id="candidate_details" method="POST">
+		Name:</br><input class="input" name='delete' type="input" required></br>
+		<input id="delete" type="submit" value="DELETE">
 	</form>
 </div>
 </body>

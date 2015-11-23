@@ -38,18 +38,18 @@
 <div id="information_form">
 	<p style="font-size:20px;margin:4px;">Add STEP-Intern Details:</p>
 	<form id="candidate_details" method="POST">
-		Name:</br><input class="input" name='name' type="input" required></br>
-		D.O.B:</br><input class="input" name='D.O.B' type="input" required></br>
-		Employee id:</br><input class="input" name='employee_id' type="input" required></br>
-		E-mail:</br><input class="input" name='e_mail' type="input" required></br>
-		Git-HUB Id:</br><input class="input" name='Git_HUB' type="input" required></br>
-		Contact Number:</br><input class="input" name='contact_number' type="input" required></br>
+		Name:</br><input class="input" name='name' type="input" pattern="[A-Za-z]+"	title="Not valid name" required></br>
+		D.O.B:</br><input class="input" name='D.O.B' type="date" min="1980-12-31" max="2050-12-31" required></br>
+		Employee id:</br><input class="input" name='employee_id' type="input" pattern="[A-Za-z0-9]+" title="Should be alphanumeric" required></br>
+		E-mail:</br><input class="input" name='e_mail' type="email" required></br>
+		Git-HUB Id:</br><input class="input" name='Git_HUB' type="input" pattern="[^\<\>]+" title="Should be alphanumeric" required></br>
+		Contact Number:</br><input class="input" name='contact_number' type="input" pattern="[0-9]+" title="Should be numeric" min="1000000000"	max="9999999999" required></br>
 		<input id="submit" type="submit" value="Submit">
 	</form>
 	<hr>
 	<p style="font-size:20px;margin:4px;">Remove STEP-Intern Details:</p>
 	<form id="candidate_details" method="POST">
-		Name:</br><input class="input" name='delete' type="input" required></br>
+		Employee id:</br><input class="input" name='delete' type="input" required></br>
 		<input id="delete" type="submit" value="DELETE">
 	</form>
 </div>

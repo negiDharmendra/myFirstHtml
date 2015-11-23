@@ -22,7 +22,7 @@ var match_URL_patterns = function(url){
 };
 
 emitter.on('next',function(handler,req,res,next){
-	if(handler.length==0) return
+	if(handler.length==0) return;
 	var pathHandlers = handler.shift();
 	pathHandlers.handler(req,res,next)
 })
@@ -65,7 +65,7 @@ function serveDefaultFile(req,res,next){
 		res.writeHead(200,{contentLength:data.length})
 		console.log(res.statusCode+"\n-------------------------------------------------------");
 		res.end(data);
-	})
+	});
 }
 
 function serveAllFile(req,res,next){
@@ -81,15 +81,19 @@ function serveAllFile(req,res,next){
 //==================================POST and DELETE=======================================================
 function maintainDataBase(comment){
 	var dataBase = fs.existsSync('./myData/studentDetails.json')&&JSON.parse(fs.readFileSync('./myData/studentDetails.json','utf-8'))||{};
+	var constantDataBase = fs.existsSync('./myData/studentDetails_all.json')&&JSON.parse(fs.readFileSync('./myData/studentDetails.json','utf-8'))||{};
+	constantDataBase[comment.employee_id] = comment;
 	if('delete' in comment){var delt  = comment['delete'];delete dataBase[delt];}
-	else dataBase[comment.name] = comment;
+	else dataBase[comment.employee_id] = comment;
 	var jsonData = JSON.stringify(dataBase)
 	fs.writeFileSync('./myData/studentDetails.json',jsonData);
 };
 
 function parepareHtml(comment){
 	var time = new Date().toString().substr(0,24)
-	return "<tr><td>"+comment.name+"</td><td>"+comment['D.O.B']+"</td><td>"+comment.employee_id+"</td><td>"+comment.e_mail+"</td><td>"+comment.Git_HUB+"</td><td>"+comment.contact_number+"</td></tr>"
+	return "<tr><td>"+comment.name+"</td><td>"+comment['D.O.B']+"</td><td>"+
+	comment.employee_id+"</td><td>"+comment.e_mail+"</td><td>"+comment.Git_HUB+
+	"</td><td>"+comment.contact_number+"</td></tr>"
 }
 
 function postGivenDataIntoRelevantFile(req,res,next){
@@ -101,7 +105,7 @@ function postGivenDataIntoRelevantFile(req,res,next){
 	req.on('end',function(){
 		maintainDataBase(data)
 		var commentData = JSON.parse(fs.readFileSync('./myData/studentDetails.json','utf-8'));
-		var keys = Object.keys(commentData).sort();
+		var keys = Object.keys(commentData).sort(function(firstIntern,secondIntern){return firstIntern.name-secondIntern.name});
 		commentData = keys.map(function(key){return commentData[key]})
 		var dataToBeAdded = commentData.map(parepareHtml)
 		var fileData = fs.readFileSync("./step2015_iframe.html",'utf-8').split(/\n\r|\n\t|\n/);
